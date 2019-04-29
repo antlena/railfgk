@@ -35,7 +35,7 @@ class BookSaved extends Mailable
      *
      * @var Book
      */
-    public $book;
+    protected $book;
     
     /**
      * Create a new message instance.
@@ -55,7 +55,7 @@ class BookSaved extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.book.success');
+        return $this->view('mail.book.success')->with('book', $this->book);
     }
     
 }
